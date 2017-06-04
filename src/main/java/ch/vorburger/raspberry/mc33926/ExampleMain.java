@@ -18,12 +18,12 @@ public class ExampleMain {
 //			triangle(turtle);
 //			dance(turtle);
 //		});
-		twoMotors.motor1().setSpeed(480);
+		twoMotors.motor1().setSpeed(350);
 		//twoMotors.motor2().setSpeed(480);
 		Thread.sleep(10000);
 		twoMotors.motor1().setSpeed(0);
 		Thread.sleep(10000);
-		twoMotors.motor1().setSpeed(-480);
+		twoMotors.motor1().setSpeed(350);
 		Thread.sleep(10000);
 		twoMotors.motor1().setSpeed(0);
 		Thread.sleep(10000);
