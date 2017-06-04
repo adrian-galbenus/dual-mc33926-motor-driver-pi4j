@@ -19,10 +19,10 @@ public class ExampleMain {
 //			dance(turtle);
 //		});
 		twoMotors.motor1().stepTo(300,480);
-		twoMotors.motor2().stepTo(300,480);
+		//twoMotors.motor2().setSpeed(480);
 		Thread.sleep(10000);
-		twoMotors.motor1.setSpeed(0);
-		twoMotors.motor2.setSpeed(0);
+		twoMotors.motor1().setSpeed(0);
+		twoMotors.motor2().setSpeed(0);
 	}
 
 
