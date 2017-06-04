@@ -26,7 +26,7 @@ public class ExampleMain {
 		twoMotors.motor1().setSpeed(-480);
 		Thread.sleep(10000);
 		twoMotors.motor1().setSpeed(0);
-
+		Thread.sleep(10000);
 	}
 
 
