@@ -60,7 +60,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>fully.qualified.MainClass</mainClass>
+									<mainClass>ch.vorburger.raspberry.mc33926.ExampleMain</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
