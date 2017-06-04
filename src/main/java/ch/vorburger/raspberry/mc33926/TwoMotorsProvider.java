@@ -7,7 +7,6 @@ import com.pi4j.io.gpio.RaspiPinNumberingScheme;
 
 import ch.vorburger.raspberry.motors.LoggingMotor;
 import ch.vorburger.raspberry.motors.Motor;
-import ch.vorburger.raspberry.motors.ReverseMotor;
 import ch.vorburger.raspberry.motors.TwoMotors;
 
 public class TwoMotorsProvider  /*implements Provider<TwoMotors>*/  {
@@ -18,12 +17,11 @@ public class TwoMotorsProvider  /*implements Provider<TwoMotors>*/  {
     public TwoMotors get() {
         if (!Boolean.getBoolean("fakeMotors")) {
             initializeGpioFactoryDefaultProvider();
-            Motor motor1 = new GpioMotor(RaspiBcmPin.GPIO_12, RaspiBcmPin.GPIO_24, RaspiBcmPin.GPIO_22);
-            Motor motor2 = new ReverseMotor(
-                    new GpioMotor(RaspiBcmPin.GPIO_13, RaspiBcmPin.GPIO_25, RaspiBcmPin.GPIO_23));
+            Motor motor1 = new GpioMotor(RaspiBcmPin.GPIO_12, RaspiBcmPin.GPIO_05);
+            Motor motor2 = new GpioMotor(RaspiBcmPin.GPIO_13, RaspiBcmPin.GPIO_06);
             return new TwoMotors(motor1, motor2);
         } else {
-            return new TwoMotors(new LoggingMotor("left"), new LoggingMotor("right"));
+            return new TwoMotors(new LoggingMotor("direction"), new LoggingMotor("speed"));
         }
     }
 

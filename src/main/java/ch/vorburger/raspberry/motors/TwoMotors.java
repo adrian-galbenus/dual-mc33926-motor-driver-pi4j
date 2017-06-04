@@ -19,15 +19,6 @@ public class TwoMotors {
 		return motor2;
 	}
 
-//	public void enable() {
-//		motor1.enable();
-//		motor2.enable();
-//	}
-//
-//	public void disable() {
-//		motor1.disable();
-//		motor2.disable();
-//	}
 
 	public void setSpeeds(int motor1Speed, int motor2Speed) {
 		motor1.setSpeed(motor1Speed);

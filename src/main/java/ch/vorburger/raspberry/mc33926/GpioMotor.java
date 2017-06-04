@@ -27,7 +27,7 @@ public class GpioMotor extends Motor {
 
 	private boolean enabled = false;
 
-	public GpioMotor(Pin pwmPin, Pin directionPin, Pin enablePin) {
+	public GpioMotor(Pin pwmPin, Pin directionPin) {
 		GpioController gpio = GpioFactory.getInstance();
 
 		Gpio.pwmSetMode(PWM_MODE_MS);
@@ -38,23 +38,11 @@ public class GpioMotor extends Motor {
 		pwmGpioPin.setPwmRange(MAX_SPEED);
 
 		directionGpioPin = gpio.provisionDigitalOutputPin(directionPin, "direction");
-		//enableGpioPin = gpio.provisionDigitalOutputPin(enablePin, "enable", PinState.LOW);
 
-		// setShutdownOptions() on (all of, entire) gpio, not just e.g. the enableGpioPin
+
 		gpio.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
 	}
 
-//	@Override
-//	public void enable() {
-//		enabled = true;
-//		enableGpioPin.setState(PinState.HIGH);
-//	}
-//
-//	@Override
-//	public void disable() {
-//		enabled = false;
-//		enableGpioPin.setState(PinState.LOW);
-//	}
 
 	@Override
 	public void setSpeed(int speed) {
